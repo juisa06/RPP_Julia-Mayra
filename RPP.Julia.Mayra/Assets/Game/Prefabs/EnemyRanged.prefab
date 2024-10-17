@@ -177,11 +177,11 @@ MonoBehaviour:
   attackRange: 1
   playerLayer:
     serializedVersion: 2
-    m_Bits: 128
-  maxHealth: 3
+    m_Bits: 64
   groundCheckRadius: 0.2
   groundCheck: {fileID: 3699002223334627804}
   attackDelay: 0.3
+  IsAtacking: 0
 --- !u!1 &6053242369188458518
 GameObject:
   m_ObjectHideFlags: 0

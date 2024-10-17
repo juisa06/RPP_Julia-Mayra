@@ -3,12 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BuletPlayer
+  - Bullet
+  - Item
+  - InvisiblePotion
+  - DamageIncrease
+  - ColeteiTudo
+  - HealthPickup
+  - Morte
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - chao
   - Water
   - UI
   - 

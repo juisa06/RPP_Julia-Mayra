@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -254,7 +255,7 @@ GameObject:
   - component: {fileID: 277904302}
   - component: {fileID: 277904301}
   - component: {fileID: 277904300}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FallPlataform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +461,7 @@ GameObject:
   - component: {fileID: 417194315}
   - component: {fileID: 417194314}
   - component: {fileID: 417194313}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FallPlataform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -943,7 +944,7 @@ GameObject:
   - component: {fileID: 768061852}
   - component: {fileID: 768061851}
   - component: {fileID: 768061850}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1074,7 @@ GameObject:
   - component: {fileID: 780630735}
   - component: {fileID: 780630734}
   - component: {fileID: 780630733}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1507,7 +1508,7 @@ GameObject:
   - component: {fileID: 934131688}
   - component: {fileID: 934131687}
   - component: {fileID: 934131686}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Plataform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1868,7 +1869,7 @@ GameObject:
   - component: {fileID: 1078298005}
   - component: {fileID: 1078298004}
   - component: {fileID: 1078298003}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FallPlataform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2399,7 +2400,7 @@ GameObject:
   - component: {fileID: 1221692412}
   - component: {fileID: 1221692411}
   - component: {fileID: 1221692413}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2689,7 +2690,7 @@ GameObject:
   - component: {fileID: 1451656729}
   - component: {fileID: 1451656728}
   - component: {fileID: 1451656727}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2821,7 +2822,7 @@ GameObject:
   - component: {fileID: 1454616759}
   - component: {fileID: 1454616758}
   - component: {fileID: 1454616762}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FallPlataform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3125,7 +3126,7 @@ GameObject:
   - component: {fileID: 1638427039}
   - component: {fileID: 1638427038}
   - component: {fileID: 1638427037}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FallPlataform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

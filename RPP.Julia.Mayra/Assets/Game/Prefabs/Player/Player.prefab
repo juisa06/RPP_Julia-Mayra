@@ -397,7 +397,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4001102141864267903}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8
   bulletPrefab: {fileID: 4329878265008958021, guid: d012f75dc49b7ff499b0055bcce8f83d, type: 3}
   bulletSpawnPoint: {fileID: 643678577621006789}
 --- !u!114 &578383170272860288

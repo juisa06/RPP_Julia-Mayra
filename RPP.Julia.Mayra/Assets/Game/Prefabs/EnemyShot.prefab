@@ -135,7 +135,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 6c826edcec54b4e49aef7380defd60aa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -209,7 +209,6 @@ MonoBehaviour:
   firePoint: {fileID: 8868036601531244489}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 128
-  speed: 2
-  moveDistance: 5
-  maxHealth: 3
+    m_Bits: 64
+  speed: 2.64
+  moveDistance: 6.96
