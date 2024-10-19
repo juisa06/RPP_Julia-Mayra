@@ -101,14 +101,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootRange: 9.78
-  fireRate: 1
+  fireRate: 0.8
   bulletPrefab: {fileID: 8901508603202664166, guid: e0393ad095f6bdf4e8f1dfe30d8cd70f, type: 3}
   firePoint: {fileID: 6942962768150478523}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 128
-  speed: 2
-  waypoints: []
+    m_Bits: 64
 --- !u!61 &9035169807224652383
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,7 +178,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &8122029129014115590
 GameObject:
   m_ObjectHideFlags: 0

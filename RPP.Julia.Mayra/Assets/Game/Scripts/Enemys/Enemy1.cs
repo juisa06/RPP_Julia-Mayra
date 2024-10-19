@@ -3,26 +3,42 @@ using UnityEngine;
 
 public class EnemyFollower : MonoBehaviour
 {
-    public float speed = 2f; // Velocidade de movimento do inimigo
-    public float followRange = 5f; // Distância em que o inimigo começa a seguir o jogador
-    public float attackRange = 1f; // Distância em que o inimigo começa a atacar o jogador
-    public LayerMask playerLayer; // Layer do jogador
-    private int maxHealth = 5; 
-    public float groundCheckRadius = 0.2f; // Raio para verificar se o inimigo está no chão
-    public Transform groundCheck; // Ponto de verificação do chão
-    public float attackDelay = 0.3f; // Tempo de espera antes de atacar
+    public float speed = 2f;
+    public float followRange = 5f;
+    public float attackRange = 1f;
+    public LayerMask playerLayer;
+    private int maxHealth = 5;
+    public float groundCheckRadius = 0.2f;
+    public Transform groundCheck;
+    public float attackDelay = 0.3f;
 
-    private GameObject player; // Referência ao jogador
-    private Rigidbody2D rb; // Referência ao Rigidbody2D do inimigo
-    private int currentHealth; // Vida atual do inimigo
-    private bool isGrounded; // Verifica se o inimigo está no chão
-    public bool IsAtacking = false;
+    private GameObject player;
+    private Rigidbody2D rb;
+    private int currentHealth;
+    private bool isGrounded;
+    public bool IsAttacking = false;
+
+    // Audio
+    public AudioClip attackSound;
+    public AudioClip takeDamageSound;
+    private AudioSource audioSource;
+    private bool isWalking;
+
+    // Animator
+    public Animator animator;
+    private int Transition; // Parâmetro de animação
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player"); // Encontrar o jogador pela tag
-        rb = GetComponent<Rigidbody2D>(); // Obter o componente Rigidbody2D
-        currentHealth = maxHealth; // Definir a vida inicial do inimigo
+        player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
+
+        audioSource = GetComponent<AudioSource>();
+        isWalking = false;
+        animator = GetComponent<Animator>();
+
+        Transition = 0; // Inicializa o parâmetro de transição
     }
 
     void Update()
@@ -33,68 +49,103 @@ public class EnemyFollower : MonoBehaviour
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-            if (distanceToPlayer <= attackRange && !IsAtacking)
+            if (distanceToPlayer <= attackRange && !IsAttacking)
             {
-                StartCoroutine(AttackPlayerCoroutine()); // Começa a corrotina para atacar o jogador
+                StartCoroutine(AttackPlayerCoroutine());
             }
-            else if (distanceToPlayer <= followRange)
+            else if (distanceToPlayer <= followRange && !IsAttacking)
             {
                 FollowPlayer();
             }
             else
             {
-                StopMovement(); // Para o movimento quando o jogador estiver fora do alcance
+                StopMovement();
             }
         }
         else
         {
-            StopMovement(); // Para o movimento se o jogador não estiver visível
+            StopMovement();
         }
 
-        // Adiciona um comportamento para parar o movimento se não estiver no chão
         if (!isGrounded)
         {
             StopMovement();
         }
+
+        // Passa o valor da variável Transition para o Animator
+        animator.SetInteger("Transition", Transition);
     }
 
     void FollowPlayer()
     {
-        Vector2 direction = (player.transform.position - transform.position).normalized; // Calcula a direção para o jogador
-        rb.velocity = new Vector2(direction.x * speed, rb.velocity.y); // Define a velocidade do Rigidbody2D para seguir o jogador, apenas no eixo X
+        Transition = 1; // Transição para animação de andar
+
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+
+        if (!isWalking)
+        {
+            isWalking = true;
+        }
     }
 
     void StopMovement()
     {
-        rb.velocity = new Vector2(0, rb.velocity.y); // Para o movimento do inimigo no eixo X
+        if (IsAttacking == false)
+        {
+            Transition = 0; // Transição para animação de parado
+
+            rb.velocity = new Vector2(0, rb.velocity.y);
+
+            if (isWalking)
+            {
+                isWalking = false;
+            }
+        }
     }
 
     IEnumerator AttackPlayerCoroutine()
     {
-        IsAtacking = true;
+        IsAttacking = true;
+        Transition = 2; // Transição para animação de ataque
+
+        StopMovement(); // Garante que o inimigo pare ao atacar
+
+        audioSource.PlayOneShot(attackSound);
+
         yield return new WaitForSeconds(attackDelay);
+
         Player playerScript = player.GetComponent<Player>();
         if (playerScript != null)
         {
-            playerScript.TakeDamage(1); // Certifique-se de que o método TakeDamage no script do jogador aplica dano
+            playerScript.TakeDamage(1);
         }
-        yield return new WaitForSeconds(1f);
-        IsAtacking = false;
-    }
 
-    bool IsPlayerVisible()
-    {
-        return (player.gameObject.layer == Mathf.Log(playerLayer.value, 2)); // Verifica se o jogador está na Layer correta
+        yield return new WaitForSeconds(1f);
+        IsAttacking = false;
+
+        Transition = 0; // Volta para a animação de parado após o ataque
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        audioSource.PlayOneShot(takeDamageSound);
 
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+    bool IsPlayerVisible()
+    {
+        return (player.gameObject.layer == Mathf.Log(playerLayer.value, 2));
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -104,11 +155,6 @@ public class EnemyFollower : MonoBehaviour
             TakeDamage(GameManager.Instance.playerDamage);
             Destroy(col.gameObject);
         }
-    }
-
-    void Die()
-    {
-        Destroy(gameObject); // Destroi o inimigo
     }
 
     void OnDrawGizmosSelected()

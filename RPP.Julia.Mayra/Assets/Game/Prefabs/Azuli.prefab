@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9099525087131634611}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.4173589, y: -2.7047508, z: 0.08929024}
   m_LocalScale: {x: 0.54450005, y: 0.54449993, z: 0.5445}
   m_ConstrainProportionsScale: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   player: {fileID: 0}
   followDistanceX: 2
   heightAbovePlayer: 2
-  followSpeed: 4
+  followSpeed: 6
 --- !u!58 &2873264731929315273
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenu;
     public Text lifeText;  // Variável para o texto da vida
+    public Text Scoretext;
 
     private bool isPaused = false;
     private int totalmedals = 0;
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int playerDamage = 1;
     public bool hasInvisiblePotion = false;
     public bool Estouinvisivel = false;
+    public int Score;
 
     private bool isPlayerDead = false;
 
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
             Die();
         }
 
+        Scoretext.text = Score.ToString();
         UpdateLifeText();  // Atualizar o texto da vida na tela
     }
 
@@ -103,8 +106,16 @@ public class GameManager : MonoBehaviour
 
     private void LoadNextLevel()
     {
-        string nextSceneName = "Level" + LevelAtual;
-        SceneManager.LoadScene(nextSceneName);
+        if (LevelAtual < 5)
+        {
+            string nextSceneName = "Level" + LevelAtual;
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            SceneManager.LoadScene("Info");
+        }
+        
     }
 
     public void TogglePause()
