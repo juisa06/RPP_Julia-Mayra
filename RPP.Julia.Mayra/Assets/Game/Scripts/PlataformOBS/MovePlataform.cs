@@ -36,6 +36,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
+
     // Para visualizar os pontos no editor
     private void OnDrawGizmos()
     {

@@ -217,6 +217,7 @@ MonoBehaviour:
   moveDistance: 6.96
   shootSound: {fileID: 8300000, guid: 5c197b8fbf073484a8f0e12255903a81, type: 3}
   takeDamageSound: {fileID: 8300000, guid: 77a641a3f7b2ed745834fa50254dbe9a, type: 3}
+  deathSound: {fileID: 8300000, guid: 9ade97cbccbd2bc4c840db4ce8193264, type: 3}
   animator: {fileID: 0}
 --- !u!82 &6298208486825120780
 AudioSource:

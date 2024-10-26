@@ -11,7 +11,7 @@ public class EnemyFollower : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public Transform groundCheck;
     public float attackDelay = 0.3f;
-
+    public bool isdead;
     private GameObject player;
     private Rigidbody2D rb;
     private int currentHealth;
@@ -21,12 +21,13 @@ public class EnemyFollower : MonoBehaviour
     // Audio
     public AudioClip attackSound;
     public AudioClip takeDamageSound;
+    public AudioClip deathSound;
     private AudioSource audioSource;
     private bool isWalking;
 
     // Animator
     public Animator animator;
-    private int Transition; // Parâmetro de animação
+    private int Transition; 
 
     void Start()
     {
@@ -38,47 +39,49 @@ public class EnemyFollower : MonoBehaviour
         isWalking = false;
         animator = GetComponent<Animator>();
 
-        Transition = 0; // Inicializa o parâmetro de transição
+        Transition = 0; 
     }
 
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
-
-        if (player != null && IsPlayerVisible())
+        if (isdead == false)
         {
-            float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
 
-            if (distanceToPlayer <= attackRange && !IsAttacking)
+            if (player != null && IsPlayerVisible())
             {
-                StartCoroutine(AttackPlayerCoroutine());
-            }
-            else if (distanceToPlayer <= followRange && !IsAttacking)
-            {
-                FollowPlayer();
+                float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+
+                if (distanceToPlayer <= attackRange && !IsAttacking)
+                {
+                    StartCoroutine(AttackPlayerCoroutine());
+                }
+                else if (distanceToPlayer <= followRange && !IsAttacking)
+                {
+                    FollowPlayer();
+                }
+                else
+                {
+                    StopMovement();
+                }
             }
             else
             {
                 StopMovement();
             }
-        }
-        else
-        {
-            StopMovement();
-        }
 
-        if (!isGrounded)
-        {
-            StopMovement();
+            if (!isGrounded)
+            {
+                StopMovement();
+            }
+            
+            animator.SetInteger("Transition", Transition);
         }
-
-        // Passa o valor da variável Transition para o Animator
-        animator.SetInteger("Transition", Transition);
     }
 
     void FollowPlayer()
     {
-        Transition = 1; // Transição para animação de andar
+        Transition = 1; 
 
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
@@ -93,7 +96,7 @@ public class EnemyFollower : MonoBehaviour
     {
         if (IsAttacking == false)
         {
-            Transition = 0; // Transição para animação de parado
+            Transition = 0; 
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
@@ -107,9 +110,9 @@ public class EnemyFollower : MonoBehaviour
     IEnumerator AttackPlayerCoroutine()
     {
         IsAttacking = true;
-        Transition = 2; // Transição para animação de ataque
+        Transition = 2; 
 
-        StopMovement(); // Garante que o inimigo pare ao atacar
+        StopMovement(); 
 
         audioSource.PlayOneShot(attackSound);
 
@@ -124,23 +127,29 @@ public class EnemyFollower : MonoBehaviour
         yield return new WaitForSeconds(1f);
         IsAttacking = false;
 
-        Transition = 0; // Volta para a animação de parado após o ataque
+        Transition = 0; 
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        audioSource.PlayOneShot(takeDamageSound);
-
         if (currentHealth <= 0)
         {
             Die();
+        }
+        else
+        {
+            audioSource.PlayOneShot(takeDamageSound);
+            animator.SetTrigger("Damage"); 
         }
     }
 
     void Die()
     {
-        Destroy(gameObject);
+        isdead = true;
+        animator.SetTrigger("dead"); 
+        audioSource.PlayOneShot(deathSound); 
+        Destroy(gameObject, 2); 
     }
 
     bool IsPlayerVisible()

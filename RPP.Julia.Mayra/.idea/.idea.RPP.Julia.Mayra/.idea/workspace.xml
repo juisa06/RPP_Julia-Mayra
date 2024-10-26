@@ -6,28 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="9f800578-2d4d-4600-a519-3009161b3337" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Anim/Enemy/EnemyRanged (1).controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Anim/Enemy/EnemyRanged (1).controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Anim/EnemyRanged/EnemyShot.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Anim/EnemyRanged/EnemyShot.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Anim/Player/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Anim/Player/Player.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Azuli.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Azuli.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Coletaveis/DamageIncrese.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Coletaveis/DamageIncrese.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Coletaveis/Life.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Coletaveis/Life.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Coletaveis/PotionInvisible.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Coletaveis/PotionInvisible.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Enemy3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Enemy3.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/EnemyRanged.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/EnemyRanged.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/EnemyShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/EnemyShot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Materiais para passar de fase/Animal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Materiais para passar de fase/Animal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Materiais para passar de fase/Mapa.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Materiais para passar de fase/Mapa.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Materiais para passar de fase/Pedra.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Materiais para passar de fase/Pedra.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Materias Bonus/CollectibleItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Materias Bonus/CollectibleItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/PlataformOBS/MovePlataform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/PlataformOBS/MovePlataform.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Spike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Spike.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +92,7 @@
       <workItem from="1729341401073" duration="984000" />
       <workItem from="1729342468902" duration="2383000" />
       <workItem from="1729345264520" duration="2912000" />
+      <workItem from="1729938760084" duration="5559000" />
     </task>
     <servers />
   </component>

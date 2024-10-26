@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         if (lifeText != null)
         {
-            lifeText.text = "Vida: " + LifePlayer.ToString();
+            lifeText.text = LifePlayer.ToString();
         }
     }
 

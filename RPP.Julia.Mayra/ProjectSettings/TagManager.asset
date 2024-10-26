@@ -12,6 +12,7 @@ TagManager:
   - ColeteiTudo
   - HealthPickup
   - Morte
+  - Plataforma
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +12,7 @@ public class Player : MonoBehaviour
     public float jumpForce = 10f;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    public bool Isjumping;
 
     public GameObject bulletPrefab; 
     public Transform bulletSpawnPoint;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private bool hasDoubleJumped;
 
     // Audio
-    public AudioClip[] sounds; // Array de sons: 0 - Pulo, 1 - Pulo Duplo, 2 - Tiro
+    public AudioClip[] sounds; // Array de sons: 0 - Pulo, 1 - Pulo Duplo, 2 - Tiro, 3 - Dano, 4 - Morte
     public AudioClip footstepSound; // Som dos passos
     private AudioSource audioSource;
     private AudioSource footstepSource; // Novo AudioSource para os passos
@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         {
             hasDoubleJumped = false;
             canDoubleJump = true;
+            Isjumping = false;
         }
 
         movement = Input.GetAxis("Horizontal");
@@ -89,11 +90,11 @@ public class Player : MonoBehaviour
             StopFootstepSound(); // Para o som de passos imediatamente
         }
 
-        if (movement != 0)
+        if (movement != 0 && Isjumping == false)
         {
             animator.SetInteger("Transitioon", 1); // Correndo
         }
-        else
+        if (movement == 0 && Isjumping == false)
         {
             animator.SetInteger("Transitioon", 0); // Parado
         }
@@ -114,6 +115,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
+        Isjumping = true;
         animator.SetInteger("Transitioon", 2); // Pulando
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         PlaySound(0); // Som do pulo
@@ -146,8 +148,8 @@ public class Player : MonoBehaviour
             PlaySound(2); // Som de tiro
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            bulletRb.velocity = new Vector2((facingRight ? 1 : -1) * 10f, 0); 
-            Destroy(bullet, 5f);
+            bulletRb.velocity = new Vector2((facingRight ? 1 : -1) * 15f, 0); 
+            Destroy(bullet, 2f);
             yield return new WaitForSeconds(0.7f);
             canShoot = true; 
         }
@@ -161,7 +163,7 @@ public class Player : MonoBehaviour
         transform.localScale = scale;
     }
 
-    private void PlaySound(int index)
+    public void PlaySound(int index)
     {
         if (index < sounds.Length)
         {
@@ -169,7 +171,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void PlayFootstepSound()
+    public void PlayFootstepSound()
     {
         footstepSource.Play();
         isWalking = true;
@@ -186,17 +188,55 @@ public class Player : MonoBehaviour
         if (col.gameObject.CompareTag("Bullet"))
         {
             Destroy(col.gameObject);
-            GameManager.Instance.LifePlayer--;
+            TakeDamage(1);
+            PlaySound(3); // Som de dano
+            animator.SetTrigger("damage"); // Animação de dano
         }
         if (col.gameObject.CompareTag("Morte"))
         {
             GameManager.Instance.LifePlayer = 0;
+            Die();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        // Verifica se o jogador está colidindo com uma plataforma
+        if (collision.gameObject.CompareTag("Plataforma"))
+        {
+            // Torna o jogador filho da plataforma
+            transform.parent = collision.transform;
         }
     }
 
-    public void TakeDamage(int Dmg)
+    // Quando o jogador sai da colisão com a plataforma
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        GameManager.Instance.LifePlayer--;
+        // Verifica se o jogador saiu de uma plataforma
+        if (collision.gameObject.CompareTag("Plataforma"))
+        {
+            // Remove o jogador como filho da plataforma
+            transform.parent = null;
+        }
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        GameManager.Instance.LifePlayer -= dmg;
+        if (GameManager.Instance.LifePlayer <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            PlaySound(3); // Som de dano
+            animator.SetTrigger("damage"); // Animação de dano
+        }
+    }
+
+    private void Die()
+    {
+        PlaySound(4); // Som de morte
+        animator.SetTrigger("Dead"); // Animação de morte
     }
 
     void OnDrawGizmosSelected()
