@@ -13,7 +13,7 @@ public class Spike : MonoBehaviour
             Rigidbody2D playerRb = collision.gameObject.GetComponent<Rigidbody2D>();
             if (playerRb != null)
             {
-                collision.gameObject.GetComponent<Animator>().SetTrigger("Damage");
+                collision.gameObject.GetComponent<Animator>().SetTrigger("damage");
                 collision.gameObject.GetComponent<Player>().PlaySound(3);
                 GameManager.Instance.LifePlayer--;
                 Vector2 pushDirection = (collision.transform.position - transform.position).normalized;

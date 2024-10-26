@@ -46,7 +46,7 @@ public class EnemyShooter : MonoBehaviour
 
     void Update()
     {
-        if (isdead == false)
+        if (isdead == false && GameManager.Instance.isPlayerDead == false)
         {
             if (player != null && IsPlayerVisible())
             {

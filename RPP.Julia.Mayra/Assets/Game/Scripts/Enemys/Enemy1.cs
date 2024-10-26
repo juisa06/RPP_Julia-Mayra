@@ -44,7 +44,7 @@ public class EnemyFollower : MonoBehaviour
 
     void Update()
     {
-        if (isdead == false)
+        if (isdead == false && GameManager.Instance.isPlayerDead == false)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
 

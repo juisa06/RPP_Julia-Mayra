@@ -1,5 +1,6 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
     public bool Estouinvisivel = false;
     public int Score;
 
-    private bool isPlayerDead = false;
+    public bool isPlayerDead = false;
 
     void Awake()
     {
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
         if (LifePlayer <= 0)
         {
-            Die();
+            StartCoroutine(Die());
         }
 
         Scoretext.text = Score.ToString();
@@ -90,16 +91,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
-        if (isPlayerDead) return;
+        if (isPlayerDead) yield break;
         isPlayerDead = true;
         lastMedalCount = totalmedals;
+
+        // Fazer o jogador esperar 3 segundos antes de renascer
+        yield return new WaitForSeconds(3f);
 
         // Mover o jogador para o último checkpoint salvo
         Transform playerTransform = GameObject.FindWithTag("Player").transform;
         playerTransform.position = CheckpointManager.Instance.GetLastCheckpointPosition();
-        TogglePause();
+        
         LifePlayer = 3; // Restaurar a vida do jogador
         isPlayerDead = false;
     }
@@ -115,7 +119,6 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("Info");
         }
-        
     }
 
     public void TogglePause()
@@ -143,4 +146,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
     }
-}                                              
+}

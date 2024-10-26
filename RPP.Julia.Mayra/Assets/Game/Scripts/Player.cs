@@ -52,12 +52,20 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        JumpAndRun();
-        HandleAttack();
+        if (GameManager.Instance.isPlayerDead == false)
+        {
+            JumpAndRun();
+            HandleAttack();
+        }
+        if (GameManager.Instance.isPlayerDead == true )
+        {
+            StopFootstepSound(); // Para o som de passos imediatamente
+        }
     }
 
     void JumpAndRun()
     {
+        // Verifica se o jogador está no chão
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (isGrounded)
@@ -65,6 +73,19 @@ public class Player : MonoBehaviour
             hasDoubleJumped = false;
             canDoubleJump = true;
             Isjumping = false;
+
+            if (movement == 0)
+            {
+                animator.SetInteger("Transitioon", 0); // Parado
+            }
+            else
+            {
+                animator.SetInteger("Transitioon", 1); // Correndo
+            }
+        }
+        else if (!isGrounded && !Isjumping)
+        {
+            animator.SetInteger("Transitioon", 2); // Pulando
         }
 
         movement = Input.GetAxis("Horizontal");
@@ -81,22 +102,13 @@ public class Player : MonoBehaviour
         }
 
         // Som de passos com o novo AudioSource
-        if (movement != 0 && isGrounded && !isWalking)
+        if (movement != 0 && isGrounded && !isWalking && GameManager.Instance.isPlayerDead == false)
         {
             PlayFootstepSound(); // Começa o som de passos
         }
         else if ((movement == 0 || !isGrounded) && isWalking)
         {
             StopFootstepSound(); // Para o som de passos imediatamente
-        }
-
-        if (movement != 0 && Isjumping == false)
-        {
-            animator.SetInteger("Transitioon", 1); // Correndo
-        }
-        if (movement == 0 && Isjumping == false)
-        {
-            animator.SetInteger("Transitioon", 0); // Parado
         }
 
         // Pulo simples ou duplo
@@ -125,12 +137,11 @@ public class Player : MonoBehaviour
     void DoubleJump()
     {
         hasDoubleJumped = true;
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         animator.SetInteger("Transitioon", 2); // Pulando
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         PlaySound(1); // Som do pulo duplo
         StopFootstepSound(); // Parar som de passos durante o pulo duplo
     }
-
     void HandleAttack()
     {
         if (Input.GetKeyDown(KeyCode.F) && canShoot) 
@@ -189,8 +200,6 @@ public class Player : MonoBehaviour
         {
             Destroy(col.gameObject);
             TakeDamage(1);
-            PlaySound(3); // Som de dano
-            animator.SetTrigger("damage"); // Animação de dano
         }
         if (col.gameObject.CompareTag("Morte"))
         {
@@ -236,7 +245,9 @@ public class Player : MonoBehaviour
     private void Die()
     {
         PlaySound(4); // Som de morte
-        animator.SetTrigger("Dead"); // Animação de morte
+        Debug.Log("Animação de morte ativada"); // Verifica se o método é chamado
+
+        animator.SetTrigger("Dead"); // Aciona a animação de morte
     }
 
     void OnDrawGizmosSelected()

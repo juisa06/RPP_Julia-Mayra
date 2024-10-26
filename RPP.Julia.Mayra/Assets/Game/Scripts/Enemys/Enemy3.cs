@@ -35,7 +35,7 @@ public class EnemyShooterStatic : MonoBehaviour
 
     void Update()
     {
-        if (player != null && IsPlayerVisible())
+        if (player != null && IsPlayerVisible() && GameManager.Instance.isPlayerDead == false)
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
