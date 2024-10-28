@@ -203,7 +203,8 @@ public class Player : MonoBehaviour
         }
         if (col.gameObject.CompareTag("Morte"))
         {
-            GameManager.Instance.LifePlayer = 0;
+            GameManager.Instance.LifePlayer = -11;
+            GameManager.Instance.respawnMenu.SetActive(true);
             Die();
         }
     }

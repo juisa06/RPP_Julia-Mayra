@@ -17,6 +17,7 @@ public class Medal : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
+            GameManager.Instance.CollectMedal();
             MedalsOBSERVER.OnMedals(1);
             Destroy(gameObject);
         }
