@@ -8,6 +8,7 @@ public class MenuController : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject instructionsPanel;
     public GameObject creditsPanel;
+    public GameObject historia;
 
     void Start()
     {
@@ -21,6 +22,16 @@ public class MenuController : MonoBehaviour
         instructionsPanel.SetActive(false);
         creditsPanel.SetActive(false);
     }
+
+    public void historiapainel()
+    {
+        mainMenuPanel.SetActive(true);
+        instructionsPanel.SetActive(false);
+        creditsPanel.SetActive(false);
+        historia.SetActive(true);
+        
+    }
+    
 
     // Exibe a tela de Instruções e oculta as outras
     public void ShowInstructions()
