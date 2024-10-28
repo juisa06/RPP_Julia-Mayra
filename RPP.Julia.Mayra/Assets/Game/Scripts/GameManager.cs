@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public GameObject pauseMenu;
-    public Text lifeText;  // Variável para o texto da vida
+    public GameObject respawnMenu;  // Novo painel para respawn ou menu
+    public Text lifeText;  
     public Text Scoretext;
 
     private bool isPaused = false;
@@ -49,16 +50,15 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (LifePlayer <= 0)
+        if (LifePlayer <= 0 && !isPlayerDead)
         {
             StartCoroutine(Die());
         }
 
         Scoretext.text = Score.ToString();
-        UpdateLifeText();  // Atualizar o texto da vida na tela
+        UpdateLifeText();
     }
 
-    // Atualiza o texto de vidas na tela
     private void UpdateLifeText()
     {
         if (lifeText != null)
@@ -75,7 +75,6 @@ public class GameManager : MonoBehaviour
                 return new string[] { "Animal1", "RareStone1", "PuzzlePiece1" };
             case 2:
                 return new string[] { "Animal2", "RareStone2", "PuzzlePiece2" };
-            // Continue para os outros níveis
             default:
                 return new string[] { };
         }
@@ -97,15 +96,29 @@ public class GameManager : MonoBehaviour
         isPlayerDead = true;
         lastMedalCount = totalmedals;
 
-        // Fazer o jogador esperar 3 segundos antes de renascer
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
 
-        // Mover o jogador para o último checkpoint salvo
+        // Exibe o menu de respawn com opções para o jogador
+        respawnMenu.SetActive(true);
+        Time.timeScale = 0f;  // Pausar o jogo enquanto o jogador escolhe
+    }
+
+    public void Respawn()
+    {
+        // Restaurar o jogador para o último checkpoint salvo
         Transform playerTransform = GameObject.FindWithTag("Player").transform;
         playerTransform.position = CheckpointManager.Instance.GetLastCheckpointPosition();
         
-        LifePlayer = 3; // Restaurar a vida do jogador
+        LifePlayer = 3;  // Restaurar a vida do jogador
         isPlayerDead = false;
+        respawnMenu.SetActive(false);
+        Time.timeScale = 1f;  // Retomar o jogo
+    }
+
+    public void ReturnToMenu()
+    {
+        Time.timeScale = 1f;  // Retomar o tempo antes de carregar o menu
+        SceneManager.LoadScene("MainMenu");  // Substitua com o nome da sua cena de menu principal
     }
 
     private void LoadNextLevel()
