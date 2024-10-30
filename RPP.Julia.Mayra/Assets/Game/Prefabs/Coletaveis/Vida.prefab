@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2366539260639581987
+--- !u!1 &1921648113124959941
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8627323320178068064}
-  - component: {fileID: 4068268633279018470}
-  - component: {fileID: 6137816615413173310}
-  - component: {fileID: 6320759324147167234}
-  - component: {fileID: 8475094297229203616}
+  - component: {fileID: 2654033126976884823}
+  - component: {fileID: 8790061971421493758}
+  - component: {fileID: 2075626599867756931}
+  - component: {fileID: 2778614200641319746}
+  - component: {fileID: 2444835258477253921}
   m_Layer: 0
-  m_Name: Life
+  m_Name: Vida
   m_TagString: HealthPickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8627323320178068064
+--- !u!4 &2654033126976884823
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366539260639581987}
+  m_GameObject: {fileID: 1921648113124959941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.39, y: -0.01, z: 0}
-  m_LocalScale: {x: 0.4544, y: 0.4301, z: 1}
+  m_LocalPosition: {x: -2.87, y: -1.23, z: 0}
+  m_LocalScale: {x: 0.25751022, y: 0.25751022, z: 0.25751022}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4068268633279018470
+--- !u!212 &8790061971421493758
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366539260639581987}
+  m_GameObject: {fileID: 1921648113124959941}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -77,23 +77,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e8ad1300baa361b41afc70f9bbef19f9, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.82, y: 4.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6137816615413173310
+--- !u!58 &2075626599867756931
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366539260639581987}
+  m_GameObject: {fileID: 1921648113124959941}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -122,26 +122,26 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &6320759324147167234
+--- !u!114 &2778614200641319746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366539260639581987}
+  m_GameObject: {fileID: 1921648113124959941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac91207dc6547074fb95a63dcfe1a356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Audio: {fileID: 0}
---- !u!82 &8475094297229203616
+--- !u!82 &2444835258477253921
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366539260639581987}
+  m_GameObject: {fileID: 1921648113124959941}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
