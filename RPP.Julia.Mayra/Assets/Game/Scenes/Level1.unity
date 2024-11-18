@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1724,6 +1725,22 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3418586933831752634, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5765066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418586933831752634, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5765066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418586933831752634, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5765066
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418586933831752634, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3425250025012135320, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1767,6 +1784,10 @@ PrefabInstance:
     - target: {fileID: 4162629824495617400, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4209107061366227918, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4459524899281517431, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_Sprite
@@ -1834,19 +1855,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4950514496937078915, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3677
+      value: 2.209031
       objectReference: {fileID: 0}
     - target: {fileID: 4950514496937078915, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3677
+      value: 2.209031
       objectReference: {fileID: 0}
     - target: {fileID: 4950514496937078915, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3677
+      value: 2.209031
       objectReference: {fileID: 0}
     - target: {fileID: 4950514496937078915, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950514496937078915, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4995831534715524016, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_IsActive
@@ -1875,6 +1900,18 @@ PrefabInstance:
     - target: {fileID: 5171942688647123242, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638652402036194628, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9034475
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638652402036194628, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9034475
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638652402036194628, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9034475
       objectReference: {fileID: 0}
     - target: {fileID: 5700618204101006193, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_Text
@@ -1954,7 +1991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6527192640497718906, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6539683939508362335, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_Text
@@ -1979,6 +2016,18 @@ PrefabInstance:
     - target: {fileID: 6626085301700104151, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964473349357017096, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9034475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964473349357017096, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.9034475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6964473349357017096, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.9034475
       objectReference: {fileID: 0}
     - target: {fileID: 7467798450876938120, guid: 7c24cd0b5df266b4180e2380d041c2fe, type: 3}
       propertyPath: m_Sprite
