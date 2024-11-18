@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float movement;
     private bool isGrounded;
-    private float groundCheckRadius = 0.2f;
+    public float groundCheckRadius = 0.2f;
     private bool canShoot = true;
     
     private Animator animator; 
@@ -247,7 +247,10 @@ public class Player : MonoBehaviour
     {
         PlaySound(4); // Som de morte
         Debug.Log("Animação de morte ativada"); // Verifica se o método é chamado
-
+        if (GameManager.Instance.LifePlayer <= -10)
+        {
+            return;
+        }
         animator.SetTrigger("Dead"); // Aciona a animação de morte
     }
 

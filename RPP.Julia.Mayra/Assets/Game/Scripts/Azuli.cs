@@ -10,7 +10,6 @@ public class Azuli : MonoBehaviour
     public float heightAbovePlayer = 2f; // Altura fixa acima do jogador
     public float followSpeed = 2f; // Velocidade de movimento do pássaro
 
-
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -26,6 +25,18 @@ public class Azuli : MonoBehaviour
         {
             Vector2 targetPosition = new Vector2(player.transform.position.x, player.transform.position.y + heightAbovePlayer);
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime);
+        }
+
+        // Verifica a direção do movimento no eixo X e ajusta a rotação no eixo Y
+        if (transform.position.x < player.transform.position.x)
+        {
+            // Vira para a direita (0º no eixo Y)
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (transform.position.x > player.transform.position.x)
+        {
+            // Vira para a esquerda (180º no eixo Y)
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
 }

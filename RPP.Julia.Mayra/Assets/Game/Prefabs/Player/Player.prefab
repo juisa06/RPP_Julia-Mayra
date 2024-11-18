@@ -318,6 +318,7 @@ MonoBehaviour:
   Isjumping: 0
   bulletPrefab: {fileID: 4329878265008958021, guid: d012f75dc49b7ff499b0055bcce8f83d, type: 3}
   bulletSpawnPoint: {fileID: 643678577621006789}
+  groundCheckRadius: 0.55
   sounds:
   - {fileID: 8300000, guid: 9c5199081a3931f4fbed6ff820c8ad2f, type: 3}
   - {fileID: 8300000, guid: 9c5199081a3931f4fbed6ff820c8ad2f, type: 3}
