@@ -7,8 +7,12 @@
     <list default="true" id="9f800578-2d4d-4600-a519-3009161b3337" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Azuli.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Azuli.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Materias Bonus/CollectiblesManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Materias Bonus/CollectiblesManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/PlataformOBS/FallingPlatform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/PlataformOBS/FallingPlatform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +25,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Coletaveis/DamageIncrase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Coletaveis/Life.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Coletaveis.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Medals/PortalManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Coletaveis/Potions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Score.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -35,6 +41,10 @@
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -97,6 +107,8 @@
       <workItem from="1730111266664" duration="3431000" />
       <workItem from="1730127616093" duration="596000" />
       <workItem from="1731972709328" duration="618000" />
+      <workItem from="1731976647961" duration="3042000" />
+      <workItem from="1731979997619" duration="526000" />
     </task>
     <servers />
   </component>

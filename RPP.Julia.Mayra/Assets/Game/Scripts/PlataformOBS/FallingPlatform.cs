@@ -3,21 +3,18 @@ using System.Collections;
 
 public class FallingPlatform : MonoBehaviour
 {
-    public Transform originalPosition; // A posição original da plataforma
-    public float fallSpeed = 50f; // Velocidade da queda (alta velocidade para cair rapidamente)
+    private Vector3 originalPosition; // Armazena a posição original da plataforma
+    public float fallSpeed = 50f; // Velocidade da queda
     public float delayBeforeFall = 1.5f; // Tempo de atraso antes de começar a cair
     public float resetTime = 2f; // Tempo para resetar a plataforma
+    public float returnSpeed = 5f; // Velocidade para retornar à posição original
 
     private bool isFalling = false;
-    private float fallStartTime;
 
     private void Start()
     {
         // Armazena a posição original da plataforma
-        if (originalPosition == null)
-        {
-            originalPosition = transform;
-        }
+        originalPosition = transform.position;
     }
 
     private void Update()
@@ -26,12 +23,6 @@ public class FallingPlatform : MonoBehaviour
         {
             // Move a plataforma para baixo
             transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
-
-            // Verifica se a plataforma chegou ao fundo (você pode definir uma altura mínima)
-            if (Time.time - fallStartTime >= resetTime)
-            {
-                StartCoroutine(ResetPlatform());
-            }
         }
     }
 
@@ -48,19 +39,24 @@ public class FallingPlatform : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeFall);
         isFalling = true;
-        fallStartTime = Time.time;
+
+        // Aguarda o tempo de reset antes de começar a retornar
+        yield return new WaitForSeconds(resetTime);
+        StartCoroutine(ResetPlatform());
     }
 
     private IEnumerator ResetPlatform()
     {
-        yield return new WaitForSeconds(resetTime);
-        // Move a plataforma de volta à posição original
-        while (Vector3.Distance(transform.position, originalPosition.position) > 0.1f)
+        isFalling = false;
+
+        // Move a plataforma de volta à posição original suavemente
+        while (Vector3.Distance(transform.position, originalPosition) > 0.1f)
         {
-            transform.position = Vector3.Lerp(transform.position, originalPosition.position, Time.deltaTime * fallSpeed);
+            transform.position = Vector3.MoveTowards(transform.position, originalPosition, returnSpeed * Time.deltaTime);
             yield return null;
         }
-        transform.position = originalPosition.position; // Garante que a plataforma esteja exatamente na posição original
-        isFalling = false;
+
+        // Garante que a posição final seja exatamente a posição original
+        transform.position = originalPosition;
     }
 }

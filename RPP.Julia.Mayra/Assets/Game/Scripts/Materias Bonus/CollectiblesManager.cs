@@ -15,7 +15,6 @@ public class CollectibleManager : MonoBehaviour
 
     private void Start()
     {
-        // Inicializa os contadores e esconde as imagens
         InitializeImages(rareStonesImages);
         InitializeImages(puzzlePiecesImages);
         InitializeImages(rareAnimalsImages);
