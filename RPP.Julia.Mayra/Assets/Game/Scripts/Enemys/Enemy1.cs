@@ -81,10 +81,20 @@ public class EnemyFollower : MonoBehaviour
 
     void FollowPlayer()
     {
-        Transition = 1; 
+        Transition = 1;
 
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+
+        // Girar o inimigo na direção do jogador
+        if (direction.x > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0); // Virado para a direita
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0); // Virado para a esquerda
+        }
 
         if (!isWalking)
         {
