@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2294304736430388541}
   - component: {fileID: 6400861474937490169}
   m_Layer: 0
-  m_Name: Pedra3
+  m_Name: Pena3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.46, y: -1.11, z: 0}
-  m_LocalScale: {x: 0.39647973, y: 0.39647973, z: 0.39647973}
+  m_LocalScale: {x: 0.10439311, y: 0.10439311, z: 0.10439311}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -134,9 +134,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15312004, y: -0.1658802}
+  m_Offset: {x: 0.21203296, y: 1.50339}
   serializedVersion: 2
-  m_Radius: 1.329401
+  m_Radius: 5.86773
 --- !u!82 &6400861474937490169
 AudioSource:
   m_ObjectHideFlags: 0

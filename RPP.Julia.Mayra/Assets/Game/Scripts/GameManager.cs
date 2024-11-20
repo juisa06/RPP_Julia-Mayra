@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
     {
         Transform playerTransform = GameObject.FindWithTag("Player").transform;
         playerTransform.position = CheckpointManager.Instance.GetLastCheckpointPosition();
-        
+        playerTransform.gameObject.GetComponent<Animator>().SetFloat("Transitioon", 0);
         LifePlayer = 3;
         isPlayerDead = false;
         respawnMenu.SetActive(false);
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Info");
+            SceneManager.LoadScene("Win");
         }
     }
 

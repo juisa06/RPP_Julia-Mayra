@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
 
     private bool canDoubleJump;
     private bool hasDoubleJumped;
+    public ItensManager itemM; // Referência ao GameManager
 
     // Audio
     public AudioClip[] sounds; // Array de sons: 0 - Pulo, 1 - Pulo Duplo, 2 - Tiro, 3 - Dano, 4 - Morte
@@ -46,12 +47,19 @@ public class Player : MonoBehaviour
         footstepSource = gameObject.AddComponent<AudioSource>();
         footstepSource.loop = true; // Configurado para repetir enquanto o jogador está andando
         footstepSource.clip = footstepSound;
+        itemM = FindObjectOfType<ItensManager>(); // Encontra o ItensManager na cena
+
+        if (itemM == null)
+        {
+            Debug.LogError("ItensManager não encontrado na cena!");
+        }
 
         isWalking = false;
     }
 
     void Update()
     {
+        itemM = FindObjectOfType<ItensManager>(); // Encontra o ItensManager na cena
         if (GameManager.Instance.isPlayerDead == false)
         {
             JumpAndRun();
@@ -155,7 +163,8 @@ public class Player : MonoBehaviour
         if (!GameManager.Instance.Estouinvisivel)
         {
             canShoot = false; 
-            animator.SetTrigger("Shoot"); 
+            animator.SetTrigger("Shoot");
+            yield return new WaitForSeconds(0.3f);
             PlaySound(2); // Som de tiro
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
@@ -196,15 +205,43 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        // Verifica se o itemManager está atribuído
+        if (itemM == null)
+        {
+            Debug.LogError("ItensManager não está configurado!");
+            return;
+        }
+
+        // Verifica se o objeto colidido é válido
+        if (col.gameObject == null)
+        {
+            Debug.LogWarning("Nenhum objeto detectado na colisão.");
+            return;
+        }
+
+        // Obtém o nome do objeto que foi coletado
+        string itemName = col.gameObject.name;
+
+        // Log de debug para verificar o nome do item coletado
+        Debug.Log($"Item coletado: {itemName}");
+
+        // Ativa o item no painel chamando o método do ItensManager
+        itemM.ActivateItemByName(itemName);
+
+        // Remove o item coletado da cena
+        Destroy(col.gameObject);
+
+        // Verifica se o item é uma "Bullet", e se for, executa lógica relacionada
         if (col.gameObject.CompareTag("Bullet"))
         {
             Destroy(col.gameObject);
-            TakeDamage(1);
+            TakeDamage(1);  // Lógica de dano quando o player colide com uma bala
         }
+
+        // Verifica se o item é uma "Morte", e executa a lógica de morte do jogador
         if (col.gameObject.CompareTag("Morte"))
         {
             GameManager.Instance.LifePlayer = -11;
-            GameManager.Instance.respawnMenu.SetActive(true);
             Die();
         }
     }

@@ -164,7 +164,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.99, y: -2.2994, z: 0}
-  m_LocalScale: {x: 0.285, y: 0.285, z: 0.285}
+  m_LocalScale: {x: 0.45960554, y: 0.45960554, z: 0.45960554}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4001102141864267903}
@@ -256,7 +256,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.30883765, y: -0.28275442}
+  m_Offset: {x: -0.4200825, y: -0.28275442}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -267,7 +267,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7237067, y: 9.677634}
+  m_Size: {x: 1.8550633, y: 9.677634}
   m_EdgeRadius: 0
 --- !u!50 &2448636811635450272
 Rigidbody2D:
@@ -318,7 +318,7 @@ MonoBehaviour:
   Isjumping: 0
   bulletPrefab: {fileID: 4329878265008958021, guid: d012f75dc49b7ff499b0055bcce8f83d, type: 3}
   bulletSpawnPoint: {fileID: 643678577621006789}
-  groundCheckRadius: 0.55
+  groundCheckRadius: 0.56
   sounds:
   - {fileID: 8300000, guid: 9c5199081a3931f4fbed6ff820c8ad2f, type: 3}
   - {fileID: 8300000, guid: 9c5199081a3931f4fbed6ff820c8ad2f, type: 3}
