@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f800578-2d4d-4600-a519-3009161b3337" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Anim/EnemyStatic/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Anim/EnemyStatic/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Anim/EnemyStatic/Shot.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Anim/EnemyStatic/Shot.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,19 +34,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Sansung-PC\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Sansung-PC\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\Sansung-PC\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.18f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\luiza\OneDrive\Documentos\github\RPP_Julia-Mayra\RPP.Julia.Mayra -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\luiza\OneDrive\Documentos\github\RPP_Julia-Mayra\RPP.Julia.Mayra" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -53,7 +57,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.18f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.38f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\luiza\OneDrive\Documentos\github\RPP_Julia-Mayra\RPP.Julia.Mayra -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\luiza\OneDrive\Documentos\github\RPP_Julia-Mayra\RPP.Julia.Mayra" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -107,6 +111,7 @@
       <workItem from="1732066079507" duration="6963000" />
       <workItem from="1732110850677" duration="1301000" />
       <workItem from="1732113979648" duration="324000" />
+      <workItem from="1732127204866" duration="264000" />
     </task>
     <servers />
   </component>
