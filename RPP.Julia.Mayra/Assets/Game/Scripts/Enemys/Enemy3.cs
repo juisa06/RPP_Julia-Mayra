@@ -77,12 +77,15 @@ public class EnemyShooterStatic : MonoBehaviour
         return (player.gameObject.layer == Mathf.Log(playerLayer.value, 2));
     }
 
-    public void TakeDamage()
+    void TakeDamage()
     {
         currentHealth -= GameManager.Instance.playerDamage;
 
         // Toca som de dano
         audioSource.PlayOneShot(takeDamageSound);
+
+        // Dispara a animação de hit
+        animator.SetTrigger("Hit");
 
         if (currentHealth <= 0)
         {
@@ -101,7 +104,8 @@ public class EnemyShooterStatic : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        animator.SetTrigger("Death");
+        Destroy(gameObject, 1.5f); // 1.5 segundos para a animação de morte
     }
 
     void OnDrawGizmosSelected()
