@@ -8,26 +8,24 @@ public class EnemyFollower : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask playerLayer;
     private int maxHealth = 5;
-    public float groundCheckRadius = 0.2f;
     public Transform groundCheck;
-    public float attackDelay = 0.3f;
+    public float groundCheckRadius = 0.2f;
     public bool isdead;
+
     private GameObject player;
     private Rigidbody2D rb;
     private int currentHealth;
     private bool isGrounded;
-    public bool IsAttacking = false;
+    private bool isWalking;
 
     // Audio
-    public AudioClip attackSound;
     public AudioClip takeDamageSound;
     public AudioClip deathSound;
     private AudioSource audioSource;
-    private bool isWalking;
 
     // Animator
     public Animator animator;
-    private int Transition; 
+    private int Transition;
 
     void Start()
     {
@@ -39,12 +37,12 @@ public class EnemyFollower : MonoBehaviour
         isWalking = false;
         animator = GetComponent<Animator>();
 
-        Transition = 0; 
+        Transition = 0; // Idle por padrão
     }
 
     void Update()
     {
-        if (isdead == false && GameManager.Instance.isPlayerDead == false)
+        if (!isdead && GameManager.Instance.isPlayerDead == false)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, LayerMask.GetMask("Ground"));
 
@@ -52,36 +50,31 @@ public class EnemyFollower : MonoBehaviour
             {
                 float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-                if (distanceToPlayer <= attackRange && !IsAttacking)
+                if (distanceToPlayer <= attackRange)
                 {
-                    StartCoroutine(AttackPlayerCoroutine());
+                    StopMovement(); // Fica parado no alcance
                 }
-                else if (distanceToPlayer <= followRange && !IsAttacking)
+                else if (distanceToPlayer <= followRange)
                 {
-                    FollowPlayer();
+                    FollowPlayer(); // Segue o jogador
                 }
                 else
                 {
-                    StopMovement();
+                    StopMovement(); // Fica parado fora do alcance
                 }
             }
             else
             {
-                StopMovement();
+                StopMovement(); // Fica parado se o jogador não for visível
             }
 
-            if (!isGrounded)
-            {
-                StopMovement();
-            }
-            
             animator.SetInteger("Transition", Transition);
         }
     }
 
     void FollowPlayer()
     {
-        Transition = 1;
+        Transition = 1; // Animação de movimento
 
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
@@ -96,48 +89,14 @@ public class EnemyFollower : MonoBehaviour
             transform.eulerAngles = new Vector3(0, 180, 0); // Virado para a esquerda
         }
 
-        if (!isWalking)
-        {
-            isWalking = true;
-        }
+        isWalking = true;
     }
 
     void StopMovement()
     {
-        if (IsAttacking == false)
-        {
-            Transition = 0; 
-
-            rb.velocity = new Vector2(0, rb.velocity.y);
-
-            if (isWalking)
-            {
-                isWalking = false;
-            }
-        }
-    }
-
-    IEnumerator AttackPlayerCoroutine()
-    {
-        IsAttacking = true;
-        Transition = 2; 
-
-        StopMovement(); 
-
-        audioSource.PlayOneShot(attackSound);
-
-        yield return new WaitForSeconds(attackDelay);
-
-        Player playerScript = player.GetComponent<Player>();
-        if (playerScript != null)
-        {
-            playerScript.TakeDamage(1);
-        }
-
-        yield return new WaitForSeconds(1f);
-        IsAttacking = false;
-
-        Transition = 0; 
+        Transition = 0; // Idle
+        rb.velocity = new Vector2(0, rb.velocity.y);
+        isWalking = false;
     }
 
     public void TakeDamage(int damage)
@@ -150,16 +109,16 @@ public class EnemyFollower : MonoBehaviour
         else
         {
             audioSource.PlayOneShot(takeDamageSound);
-            animator.SetTrigger("Damage"); 
+            animator.SetTrigger("Damage");
         }
     }
 
     void Die()
     {
         isdead = true;
-        animator.SetTrigger("dead"); 
-        audioSource.PlayOneShot(deathSound); 
-        Destroy(gameObject, 2); 
+        animator.SetTrigger("dead");
+        audioSource.PlayOneShot(deathSound);
+        Destroy(gameObject, 2);
     }
 
     bool IsPlayerVisible()
@@ -167,12 +126,15 @@ public class EnemyFollower : MonoBehaviour
         return (player.gameObject.layer == Mathf.Log(playerLayer.value, 2));
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("BuletPlayer"))
+        if (col.gameObject.CompareTag("Player"))
         {
-            TakeDamage(GameManager.Instance.playerDamage);
-            Destroy(col.gameObject);
+            Player playerScript = col.gameObject.GetComponent<Player>();
+            if (playerScript != null)
+            {
+                playerScript.TakeDamage(1); // Dano ao jogador ao colidir
+            }
         }
     }
 

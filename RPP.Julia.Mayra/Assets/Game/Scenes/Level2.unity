@@ -570,18 +570,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3699002223334627804, guid: 9c4547bf85d6b5b4495df6aeeb150608, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 3699002223334627804, guid: 9c4547bf85d6b5b4495df6aeeb150608, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 5279175383860947979, guid: 9c4547bf85d6b5b4495df6aeeb150608, type: 3}
-      propertyPath: groundCheckRadius
-      value: 0.38
-      objectReference: {fileID: 0}
     - target: {fileID: 5662725967539553679, guid: 9c4547bf85d6b5b4495df6aeeb150608, type: 3}
       propertyPath: m_Name
       value: EnemyRanged
@@ -1987,29 +1975,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4165835113509036942, guid: 4728a78529eb5c24e9efcab7a081ec71, type: 3}
-      propertyPath: m_Mass
-      value: 1000000
-      objectReference: {fileID: 0}
     - target: {fileID: 4236370101838874523, guid: 4728a78529eb5c24e9efcab7a081ec71, type: 3}
       propertyPath: m_Name
       value: EnemyShot
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667148064138801325, guid: 4728a78529eb5c24e9efcab7a081ec71, type: 3}
-      propertyPath: m_Size.x
-      value: 2.3370545
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667148064138801325, guid: 4728a78529eb5c24e9efcab7a081ec71, type: 3}
-      propertyPath: m_Size.y
-      value: 9.494322
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667148064138801325, guid: 4728a78529eb5c24e9efcab7a081ec71, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.39325562
-      objectReference: {fileID: 0}
-    - target: {fileID: 8667148064138801325, guid: 4728a78529eb5c24e9efcab7a081ec71, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.23595333
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3493,10 +3461,6 @@ PrefabInstance:
     - target: {fileID: 5091008379225269985, guid: 974a2216bc475814fa37ce5dec9e39b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124152881057591370, guid: 974a2216bc475814fa37ce5dec9e39b1, type: 3}
-      propertyPath: m_Mass
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

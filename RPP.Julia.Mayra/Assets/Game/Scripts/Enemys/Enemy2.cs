@@ -77,7 +77,6 @@ public class EnemyShooter : MonoBehaviour
             animator.SetInteger("Transition", Transition);
         }
     }
-
         void Move()
     {
         Transition = 1;
@@ -100,10 +99,12 @@ public class EnemyShooter : MonoBehaviour
     IEnumerator ShootCoroutine()
     {
         isShooting = true;
-        Transition = 2;
+        Transition = 2; // Estado de ataque
+        animator.SetInteger("Transition", Transition);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f); // Tempo para entrar na animação de ataque
 
+        // Criação do projétil
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rbBullet = bullet.GetComponent<Rigidbody2D>();
         if (rbBullet != null)
@@ -115,8 +116,14 @@ public class EnemyShooter : MonoBehaviour
         audioSource.PlayOneShot(shootSound);
         nextFireTime = Time.time + 1.5f / fireRate;
 
-        yield return new WaitForSeconds(1f);
-        isShooting = false;
+        yield return new WaitForSeconds(0.5f); // Pequeno atraso após o tiro
+
+        // Voltar ao estado idle
+        Transition = 0; // Estado idle
+        animator.SetInteger("Transition", Transition);
+        yield return new WaitForSeconds(1f); // Tempo em idle antes de permitir outro ataque
+
+        isShooting = false; // Permitir novo ataque
     }
 
     bool IsPlayerVisible()
