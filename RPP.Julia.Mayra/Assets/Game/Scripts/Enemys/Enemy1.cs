@@ -99,9 +99,9 @@ public class EnemyFollower : MonoBehaviour
         isWalking = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage()
     {
-        currentHealth -= damage;
+        currentHealth -= GameManager.Instance.playerDamage;
         if (currentHealth <= 0)
         {
             Die();
@@ -135,6 +135,14 @@ public class EnemyFollower : MonoBehaviour
             {
                 playerScript.TakeDamage(1); // Dano ao jogador ao colidir
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("BuletPlayer"))
+        {
+            TakeDamage();
+            Destroy(col.gameObject);
         }
     }
 

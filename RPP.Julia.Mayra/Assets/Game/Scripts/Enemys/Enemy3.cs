@@ -39,15 +39,28 @@ public class EnemyShooterStatic : MonoBehaviour
         {
             float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
+            // Atualiza a rotação para olhar para o jogador
+            LookAtPlayer();
+
             if (distanceToPlayer <= shootRange && Time.time >= nextFireTime)
             {
                 StartCoroutine(Attack());
                 nextFireTime = Time.time + 1.5f / fireRate; // Atualiza o próximo tempo de ataque
             }
         }
-
-        // Atualiza o parâmetro de animação
         animator.SetBool("isAttacking", isAttacking);
+    }
+    void LookAtPlayer()
+    {
+        Vector3 direction = player.position - transform.position;
+        if (direction.x >= 0) // Jogador à direita
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else // Jogador à esquerda
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        }
     }
 
     private IEnumerator Attack()
@@ -76,7 +89,7 @@ public class EnemyShooterStatic : MonoBehaviour
     {
         return (player.gameObject.layer == Mathf.Log(playerLayer.value, 2));
     }
-
+    
     void TakeDamage()
     {
         currentHealth -= GameManager.Instance.playerDamage;

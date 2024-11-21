@@ -228,9 +228,6 @@ public class Player : MonoBehaviour
         // Ativa o item no painel chamando o método do ItensManager
         itemM.ActivateItemByName(itemName);
 
-        // Remove o item coletado da cena
-        Destroy(col.gameObject);
-
         // Verifica se o item é uma "Bullet", e se for, executa lógica relacionada
         if (col.gameObject.CompareTag("Bullet"))
         {

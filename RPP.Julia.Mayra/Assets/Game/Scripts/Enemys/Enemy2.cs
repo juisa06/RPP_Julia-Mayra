@@ -112,13 +112,9 @@ public class EnemyShooter : MonoBehaviour
             Vector2 direction = (player.position - firePoint.position).normalized;
             rbBullet.velocity = direction * 10f;
         }
-
         audioSource.PlayOneShot(shootSound);
         nextFireTime = Time.time + 1.5f / fireRate;
-
         yield return new WaitForSeconds(0.5f); // Pequeno atraso após o tiro
-
-        // Voltar ao estado idle
         Transition = 0; // Estado idle
         animator.SetInteger("Transition", Transition);
         yield return new WaitForSeconds(1f); // Tempo em idle antes de permitir outro ataque
