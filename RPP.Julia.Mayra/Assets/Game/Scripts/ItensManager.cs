@@ -25,7 +25,6 @@ public class ItensManager : MonoBehaviour
         };
     }
 
-    // Método para ativar itens no painel
     public void ActivateItemByName(string itemName)
     {
         if (string.IsNullOrEmpty(itemName))
@@ -36,11 +35,24 @@ public class ItensManager : MonoBehaviour
 
         if (itemUIMap.ContainsKey(itemName))
         {
-            itemUIMap[itemName].SetActive(true);
+            itemUIMap[itemName].SetActive(true); // Ativa o item na UI
+            DestroyItem(itemName); // Destroi o item coletado
         }
         else
         {
             Debug.LogWarning($"Item desconhecido: {itemName}");
+        }
+    }
+    private void DestroyItem(string itemName)
+    {
+        GameObject item = GameObject.Find(itemName); // Encontra o objeto pelo nome
+        if (item != null)
+        {
+            Destroy(item); // Destroi o objeto coletado
+        }
+        else
+        {
+            Debug.LogWarning($"Objeto com o nome {itemName} não foi encontrado para destruição.");
         }
     }
 

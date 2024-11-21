@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f800578-2d4d-4600-a519-3009161b3337" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyRanged.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyRanged.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyShot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level6.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level6.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/New Scene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/New Scene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +110,7 @@
       <workItem from="1732157668055" duration="1790000" />
       <workItem from="1732192758020" duration="1248000" />
       <workItem from="1732194198324" duration="214000" />
+      <workItem from="1732195331792" duration="322000" />
     </task>
     <servers />
   </component>
