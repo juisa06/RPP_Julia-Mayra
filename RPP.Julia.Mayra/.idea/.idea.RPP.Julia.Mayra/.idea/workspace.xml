@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f800578-2d4d-4600-a519-3009161b3337" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/BuletEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/BuletEnemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/BulletEnemy2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/BulletEnemy2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/Enemy3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/Enemy3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyRanged.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyRanged.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyShot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Prefabs/Inimigos/EnemyShot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy2.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +107,7 @@
       <workItem from="1732110850677" duration="1301000" />
       <workItem from="1732113979648" duration="324000" />
       <workItem from="1732127204866" duration="264000" />
-      <workItem from="1732157668055" duration="1197000" />
+      <workItem from="1732157668055" duration="1790000" />
     </task>
     <servers />
   </component>
