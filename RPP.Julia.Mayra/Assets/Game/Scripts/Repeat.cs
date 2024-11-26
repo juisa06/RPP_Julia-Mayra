@@ -46,14 +46,14 @@ public class Repeat : MonoBehaviour
     private void RepositionToLeft()
     {
         // Reposiciona o background à frente, para a esquerda, quando ele ultrapassa a câmera à direita.
-        Vector2 offset = new Vector2(-backgroundWidth * 2f, 0);  // Coloca o background à frente da câmera, na direção oposta.
+        Vector2 offset = new Vector2(backgroundWidth, 0);  // Coloca o background diretamente no fim da próxima imagem.
         transform.position = (Vector2)transform.position + offset;
     }
 
     private void RepositionToRight()
     {
         // Reposiciona o background à frente, para a direita, quando ele ultrapassa a câmera à esquerda.
-        Vector2 offset = new Vector2(backgroundWidth * 2f, 0);  // Coloca o background à frente da câmera, na direção oposta.
+        Vector2 offset = new Vector2(-backgroundWidth, 0);  // Coloca o background diretamente no fim da próxima imagem.
         transform.position = (Vector2)transform.position + offset;
     }
 }
