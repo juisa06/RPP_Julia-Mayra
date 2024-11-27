@@ -173,5 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallSpeed: 5
   delayBeforeFall: 1.5
-  resetTime: 2
-  returnSpeed: 5
+  resetTime: 10
+  returnSpeed: 10
