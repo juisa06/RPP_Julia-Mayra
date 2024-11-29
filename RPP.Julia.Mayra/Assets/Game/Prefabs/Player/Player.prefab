@@ -323,8 +323,8 @@ MonoBehaviour:
   sounds:
   - {fileID: 8300000, guid: 7ccbaaf6d0404c7448a035eb24d0305b, type: 3}
   - {fileID: 8300000, guid: 7ccbaaf6d0404c7448a035eb24d0305b, type: 3}
-  - {fileID: 8300000, guid: 90ba1b8365936e3469e011fe7f4b5082, type: 3}
-  - {fileID: 8300000, guid: 57a47ff3668a98c4b8ac906308dd8954, type: 3}
+  - {fileID: 8300000, guid: df8837975ec317046a6660c521cced7b, type: 3}
+  - {fileID: 8300000, guid: 916fc5db7aeb5d847a61750fc45b36f6, type: 3}
   - {fileID: 8300000, guid: 5182e8b9fccb99a448e7c23e69298175, type: 3}
   footstepSound: {fileID: 8300000, guid: 686d8074eedd0084db09a6708921bba1, type: 3}
 --- !u!114 &578383170272860288
