@@ -48,7 +48,7 @@ public class ItensManager : MonoBehaviour
         GameObject item = GameObject.Find(itemName); // Encontra o objeto pelo nome
         if (item != null)
         {
-            Destroy(item); // Destroi o objeto coletado
+            Destroy(item,0.2f); // Destroi o objeto coletado
         }
         else
         {

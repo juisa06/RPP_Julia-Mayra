@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PortalUnlock2D : MonoBehaviour
@@ -15,8 +16,8 @@ public class PortalUnlock2D : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Desativa o item após a coleta
-            itemToCollect.SetActive(false);
-
+            //itemToCollect.SetActive(false);
+            //Destroy(itemToCollect, 0.2f);
             // Ativa o portal, incluindo o seu colisor, para liberar a passagem
             if (portal != null)
             {

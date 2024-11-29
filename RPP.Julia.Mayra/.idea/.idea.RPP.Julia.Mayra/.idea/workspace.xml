@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9f800578-2d4d-4600-a519-3009161b3337" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPP.Julia.Mayra/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Repeat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Repeat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Anim/EnemyStatic/Enemy3.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Anim/EnemyStatic/Enemy3.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scenes/Level4.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Enemys/Enemy3.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/ItensManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/ItensManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Game/Scripts/Medals/PortalManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Game/Scripts/Medals/PortalManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Coletaveis.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Medals/PortalManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/ItensManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SondeColeta.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Coletaveis/Potions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Score.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -114,6 +122,8 @@
       <workItem from="1732195331792" duration="653000" />
       <workItem from="1732639768389" duration="850000" />
       <workItem from="1732641337739" duration="7935000" />
+      <workItem from="1732913694359" duration="1339000" />
+      <workItem from="1732915597928" duration="357000" />
     </task>
     <servers />
   </component>

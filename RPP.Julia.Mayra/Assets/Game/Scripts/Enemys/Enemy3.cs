@@ -93,16 +93,17 @@ public class EnemyShooterStatic : MonoBehaviour
     void TakeDamage()
     {
         currentHealth -= GameManager.Instance.playerDamage;
-
-        // Toca som de dano
-        audioSource.PlayOneShot(takeDamageSound);
-
-        // Dispara a animação de hit
-        animator.SetTrigger("Hit");
-
         if (currentHealth <= 0)
         {
             Die();
+        }
+        else
+        {
+            // Toca som de dano
+            audioSource.PlayOneShot(takeDamageSound);
+
+            // Dispara a animação de hit
+            animator.SetTrigger("Hit");
         }
     }
 
